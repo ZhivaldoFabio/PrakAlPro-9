@@ -1,0 +1,74 @@
+# Zhivaldo Fabio H.
+# 71200608
+# UKDW
+
+'''
+Yanto bermain game yang bernama Pakloran.
+game ini memiliki beberapa agen yang memiliki kekuatan.
+bantu Yanto membuat kamus agen agen tersebut
+agar Yanto dapat berbagi ilmu dengan temannya
+'''
+# Input : Choice, Name, Ability, Ultimate, Type
+# Process : Menentukan choices, inputing data, erasing data, showing data
+# Output : Agent name, Ability, Ultimate, Type
+
+import time
+kamus = {}
+while True:
+    def menu():
+        print ('\n\n', '='*10, 'KAMUS PAKLORAN', '='*10, '\n\n')
+        print ('\n'
+        '1. Tambah Agent' '\n'
+        '2. Hapus Agent' '\n'
+        '3. Cari Agent' '\n'
+        )
+
+        choice = int(input('Masukan Pilihan anda :\n>> '))
+        if choice == 1:
+            choice1()
+        elif choice == 2:
+            choice2()
+        elif choice == 3:
+            choice3()
+        else :
+            print('Please Input Correctly!')
+
+    def choice1 ():
+        Agentname = input('Masukkan Nama Agent : ')
+        Ability = input('Masukan Ability Agent : ')
+        Ultimate = input('Masukkan nama Ultimate : ')
+        Type = input('Masukan Tipe Agent : ')
+
+        kamus [Agentname] = 'Ability :', Ability, 'Ultimate :', Ultimate, 'Type :', Type
+        print ('Processing...')
+        time.sleep(1)
+        print ('Agen Berhasil ditambahkan!')
+        time.sleep(0.5)
+
+    def choice2 ():
+        nama = input('Masukan Nama Agent  yang mau dihapus :\n>> ')
+
+        if nama in kamus:
+            kamus.pop(nama)
+            print('Agent Erased!')
+            time.sleep(1)
+        else :
+            print ('Agent tidak Ditemukan!\n')
+            time.sleep(1)
+
+    def choice3():
+        Agent = input ('Masukkan Nama Agent yang ingin di Cari :\n>> ')
+
+        if Agent in kamus:
+            print ('Agent Name :', Agent)
+            print (kamus[Agent])
+            input('press enter...')
+        else :
+            print('NOT FOUND!')
+            time.sleep(1)
+
+    try:
+        menu()
+    except:
+        print('Menu Tidak Tersedia!!\n\n\n')
+        time.sleep(1)
